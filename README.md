@@ -25,9 +25,13 @@ public class AppConfig {
 
 ## 4. 如何在SpringFramework中获得Java类配置的bean
 - main 方法
+> 注意：在此处的 new AnnotationConfigApplicationContext()，可以传递一个参数，找到对应的配置类
+>       也在不填参数，在下面调用 scan() 方法， 进行扫包，把整个包中的配置类都扫描到。但是必须使
+>       用refresh()方法
+
 ```java 
     // 生成基于注解配置的应用上下文对象
-    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
     // 手动开启扫包
     ctx.scan("com.soft1851.spring.ioc.config");
     ctx.refresh();
@@ -38,7 +42,7 @@ public class AppConfig {
 ```
 
 - 单元测试
-> 注意在xml配置文件中手动开启扫包操作
+> 注意在 xml 配置文件中手动开启扫包操作
 
 ```xml
     <context:component-scan base-package="com.soft1851.spring.ioc.config" />

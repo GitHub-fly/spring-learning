@@ -1,9 +1,10 @@
 package com.soft1851.spring.ioc.config;
 
+import com.soft1851.spring.ioc.entity.Book;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.awt.print.Book;
+
 
 /**
  * @author xunmi
@@ -17,5 +18,10 @@ public class AppConfig {
     @Bean
     public Book book() {
         return new Book();
+    }
+
+    @Bean
+    public Book bookPlus() {
+        return new Book("bookPlus", 66.6);
     }
 }

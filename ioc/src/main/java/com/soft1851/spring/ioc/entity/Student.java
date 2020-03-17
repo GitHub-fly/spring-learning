@@ -1,9 +1,6 @@
 package com.soft1851.spring.ioc.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @Data
+@Builder
 public class Student {
     private Integer id;
     private String name;

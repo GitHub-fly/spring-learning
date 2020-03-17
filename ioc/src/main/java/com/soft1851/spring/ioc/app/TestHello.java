@@ -16,6 +16,5 @@ public class TestHello {
         ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
         Hello hello = (Hello) ac.getBean("hello");
         hello.sayHello();
-
     }
 }
