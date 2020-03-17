@@ -1,4 +1,4 @@
-package com.soft1851.spring.ioc.app;
+package com.soft1851.spring.ioc;
 
 /**
  * @author xunmi

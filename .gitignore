@@ -2,7 +2,7 @@
 .idea/
 **/target/
 **/logs/
-**/test/
+#**/test/
 
 # 忽略这些文件
 HELP.md

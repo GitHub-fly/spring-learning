@@ -5,8 +5,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.soft1851.spring.ioc.config"/>
-
+    <context:component-scan base-package="com.soft1851.spring.ioc.config" />
+    <!-- xml 文件初学阶段 -->
     <bean id="hello" class="com.soft1851.spring.ioc.entity.Hello"/>
     <bean id="sort" class="com.soft1851.spring.ioc.other.Sort"/>
     <bean id="phone" class="com.soft1851.spring.ioc.entity.Phone">
@@ -14,7 +14,7 @@
         <constructor-arg name="price" value="8888.8"/>
     </bean>
     <bean id="phone1" class="com.soft1851.spring.ioc.entity.Phone" p:brand="OPPO" p:price="6666.6"/>
-
+    <!-- List 属性的操作 -->
     <bean id="student" class="com.soft1851.spring.ioc.entity.Student">
         <property name="id" value="1001"/>
         <property name="name" value="Tom"/>
@@ -25,7 +25,7 @@
             </list>
         </property>
     </bean>
-
+    <!-- Set 属性的操作 -->
     <bean id="studentSet" class="com.soft1851.spring.ioc.entity.Student" p:name="SetStudent">
         <property name="hobby">
             <set>
@@ -38,7 +38,7 @@
             </set>
         </property>
     </bean>
-
+    <!-- Map 属性的操作 -->
     <bean id="studentMap" class="com.soft1851.spring.ioc.entity.Student" p:name="MapStudent">
         <property name="mother">
             <map>
