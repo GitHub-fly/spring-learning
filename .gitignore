@@ -21,8 +21,8 @@ HELP.md
 logs/
 .idea/
 .mvn/
-target/*
-*/test/
+*/target/**
+*/test/*
 ##忽略这些后缀的文件
 *.log
 *.properties
