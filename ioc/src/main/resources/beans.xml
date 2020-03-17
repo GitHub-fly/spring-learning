@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hello" class="com.soft1851.spring.ioc.entity.Hello"/>
+    <bean id="sort" class="com.soft1851.spring.ioc.other.Sort"/>
+    <bean id="phone" class="com.soft1851.spring.ioc.entity.Phone">
+        <constructor-arg name="brand" value="iPhone11"/>
+        <constructor-arg name="price" value="8888.8"/>
+    </bean>
+    <bean id="phone1" class="com.soft1851.spring.ioc.entity.Phone" p:brand="OPPO" p:price="6666.6" />
+
+    <bean id="student" class="com.soft1851.spring.ioc.entity.Student">
+        <property name="id" value="1001"/>
+        <property name="name" value="Tom"/>
+        <property name="phones">
+            <list>
+                <ref bean="phone"/>
+                <ref bean="phone1"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="studentSet" class="com.soft1851.spring.ioc.entity.Student" p:name="SetStudent">
+        <property name="hobby">
+            <set>
+                <value>打游戏</value>
+                <value>打游戏</value>
+                <value>编程</value>
+                <value>听音乐</value>
+                <value>跟小伙伴腻在一起</value>
+                <value>跟小伙伴腻在一起</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="studentMap" class="com.soft1851.spring.ioc.entity.Student" p:name="MapStudent">
+        <property name="mother">
+            <map>
+                <entry key="140525199905114413" value="寻寻觅觅"/>
+            </map>
+        </property>
+    </bean>
+</beans>
