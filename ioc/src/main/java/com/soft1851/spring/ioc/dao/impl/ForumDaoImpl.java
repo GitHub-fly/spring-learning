@@ -29,7 +29,6 @@ public class ForumDaoImpl implements ForumDao {
     public int insert(Forum forum) {
         String sql = "INSERT INTO t_forum VALUES (NULL, ?) ";
         Object[] args = { forum.getForumName() };
-        System.out.println(args[0]);
         return jdbcTemplate.update(sql, args);
     }
 
@@ -42,7 +41,6 @@ public class ForumDaoImpl implements ForumDao {
             public void setValues(PreparedStatement ps, int i) throws SQLException {
                 ps.setString(1, forumList.get(i).getForumName());
             }
-
 
             @Override
             public int getBatchSize() {
