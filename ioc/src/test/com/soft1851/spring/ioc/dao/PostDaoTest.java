@@ -46,19 +46,19 @@ public class PostDaoTest {
 
     @Test
     public void delete() {
-        int n = postDao.delete(1);
+        int n = postDao.delete(3);
         assertEquals(1, n);
     }
 
     @Test
     public void selectByWords() {
-        List<Post> postList = postDao.selectByKey("测试");
+        List<Post> postList = postDao.selectByKey("1");
         postList.forEach(item -> System.out.println(item.getPostId()));
     }
 
     @Test
     public void count() {
-        int i = 3;
+        int i = 1;
         System.out.println(postDao.count(i));
     }
 }

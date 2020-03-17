@@ -90,6 +90,6 @@ public class PostDaoImpl implements PostDao {
                 "ON post.forum_id = forum.forum_id\n" +
                 "WHERE post.forum_id = ? ";
         Object[] args = { forumId };
-        return jdbcTemplate.query(sql,args, new BeanPropertyRowMapper<>(Forum.class)).size();
+        return jdbcTemplate.queryForObject(sql,Integer.class, args);
     }
 }
