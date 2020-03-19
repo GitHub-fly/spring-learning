@@ -14,4 +14,5 @@ HELP.md
 # 不忽略这些文件（夹）
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
+!**/WEB-INF/**
 !pom.xml
