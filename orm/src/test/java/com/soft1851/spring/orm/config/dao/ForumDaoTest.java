@@ -1,21 +1,23 @@
-package com.soft1851.spring.ioc.dao;
+package com.soft1851.spring.orm.config.dao;
 
-import com.soft1851.spring.ioc.dao.impl.ForumDaoImpl;
-import com.soft1851.spring.ioc.entity.Forum;
+import com.soft1851.spring.orm.config.JdbcConfig;
+import com.soft1851.spring.orm.dao.ForumDao;
+import com.soft1851.spring.orm.entity.Forum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/applicationContext.xml"})
+@ContextConfiguration(classes = {JdbcConfig.class})
+//@ContextConfiguration(locations = {"/applicationContext.xml"})
 public class ForumDaoTest {
     @Autowired
     private ForumDao forumDao;

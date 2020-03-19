@@ -1,6 +1,5 @@
 package com.soft1851.spring.ioc.app;
 
-import com.soft1851.spring.ioc.config.AppConfig;
 import com.soft1851.spring.ioc.entity.Book;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

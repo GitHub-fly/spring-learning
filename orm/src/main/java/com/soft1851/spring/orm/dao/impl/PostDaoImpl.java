@@ -1,8 +1,7 @@
-package com.soft1851.spring.ioc.dao.impl;
+package com.soft1851.spring.orm.dao.impl;
 
-import com.soft1851.spring.ioc.dao.PostDao;
-import com.soft1851.spring.ioc.entity.Forum;
-import com.soft1851.spring.ioc.entity.Post;
+import com.soft1851.spring.orm.dao.PostDao;
+import com.soft1851.spring.orm.entity.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -65,6 +64,22 @@ public class PostDaoImpl implements PostDao {
         String sql = "DELETE FROM t_post WHERE post_id = ? ";
         Object[] args = { postId };
         return jdbcTemplate.update(sql, args);
+    }
+
+    @Override
+    public int[] batchDelete(List<Integer> idList) {
+        final List<Integer> list = idList;
+        String sql = "DELETE FROM t_post WHERE post_id = ? ";
+        return jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
+                preparedStatement.setInt(1,list.get(i));
+            }
+            @Override
+            public int getBatchSize() {
+                return list.size();
+            }
+        });
     }
 
     @Override

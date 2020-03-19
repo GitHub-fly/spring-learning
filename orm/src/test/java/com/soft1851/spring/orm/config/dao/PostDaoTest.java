@@ -1,21 +1,22 @@
-package com.soft1851.spring.ioc.dao;
+package com.soft1851.spring.orm.config.dao;
 
-import com.soft1851.spring.ioc.entity.Post;
+import com.soft1851.spring.orm.config.JdbcConfig;
+import com.soft1851.spring.orm.dao.PostDao;
+import com.soft1851.spring.orm.entity.Post;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/applicationContext.xml"})
+@ContextConfiguration(classes = {JdbcConfig.class})
+//@ContextConfiguration(locations = {"/applicationContext.xml"})
 public class PostDaoTest {
 
     @Autowired
@@ -48,6 +49,12 @@ public class PostDaoTest {
     public void delete() {
         int n = postDao.delete(3);
         assertEquals(1, n);
+    }
+
+    @Test
+    public void batchDelete() {
+        Integer[] ids = { 7, 8, 9 };
+        System.out.println(postDao.batchDelete(Arrays.asList(ids)).length);
     }
 
     @Test

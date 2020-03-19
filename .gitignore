@@ -2,6 +2,7 @@
 .idea/
 **/target/
 **/logs/
+**/out/
 #**/test/
 
 # 忽略这些文件

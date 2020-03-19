@@ -1,6 +1,6 @@
-package com.soft1851.spring.ioc.dao;
+package com.soft1851.spring.orm.dao;
 
-import com.soft1851.spring.ioc.entity.Post;
+import com.soft1851.spring.orm.entity.Post;
 
 import java.util.List;
 
@@ -34,6 +34,13 @@ public interface PostDao {
      * @return int
      */
     int delete(int postId);
+
+    /**
+     * 批量删除
+     * @param idList id集合
+     * @return int[]
+     */
+    int[] batchDelete(List<Integer> idList);
 
     /**
      * 根据id查询 Post

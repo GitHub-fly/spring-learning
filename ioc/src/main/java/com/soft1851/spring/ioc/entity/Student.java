@@ -1,6 +1,7 @@
 package com.soft1851.spring.ioc.entity;
 
 import lombok.*;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 import java.util.Map;
@@ -24,5 +25,4 @@ public class Student {
     private List<Phone> phones;
     private Set<String> hobby;
     private Map<Long, String> mother;
-
 }
