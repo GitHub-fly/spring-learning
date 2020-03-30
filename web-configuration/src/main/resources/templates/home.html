@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+    <h2>Spring MVC</h2>
+    <p th:text="${message}"></p>
+    <div th:each="book:${bookList}">
+        <p th:text="${book.title}">图书名称</p>
+        <img th:src="${book.cover}" alt="图片">
+    </div>
+</body>
+</html>
