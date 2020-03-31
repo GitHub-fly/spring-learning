@@ -1,6 +1,6 @@
 package com.soft1851.spring.mybatis.service.impl;
 
-import com.soft1851.spring.mybatis.entity.Forum;
+import com.soft1851.spring.mybatis.domain.entity.Forum;
 import com.soft1851.spring.mybatis.mapper.ForumMapper;
 import com.soft1851.spring.mybatis.service.ForumService;
 import org.springframework.stereotype.Service;

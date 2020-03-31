@@ -7,10 +7,11 @@
     <groupId>groupId</groupId>
     <artifactId>mybatis-xml</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <parent>
         <groupId>com.soft1851</groupId>
         <artifactId>spring-learning</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    
+
 </project>

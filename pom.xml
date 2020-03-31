@@ -14,7 +14,7 @@
         <module>orm</module>
         <module>aop</module>
         <module>web</module>
-        <module>web-configuration</module>
+        <module>web-annotation</module>
         <module>mybatis-xml</module>
     </modules>
 
@@ -162,7 +162,7 @@
             <version>1.3.2</version>
         </dependency>
 
-    <!-- Mybatis -->
+        <!-- Mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>

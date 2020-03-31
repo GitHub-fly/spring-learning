@@ -48,7 +48,7 @@
         <!-- 引入mybatis配置文件 -->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!--指定实体类所在包-->
-        <property name="typeAliasesPackage" value="com.soft1851.spring.mybatis.entity" />
+        <property name="typeAliasesPackage" value="com.soft1851.spring.mybatis.domain.entity" />
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:mappers/*.xml"/>
     </bean>
